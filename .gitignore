@@ -97,3 +97,4 @@ ENV/
 # Data
 udacity_driving_datasets.zip
 data
+ssd_keras_data_2_4.tar.gz
