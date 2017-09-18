@@ -54,7 +54,7 @@ model, predictor_sizes = build_model(image_size=(img_height, img_width, img_chan
 
 model.load_weights('./model_v2_5.h5')
 
-real_img_path = '/notebooks/0'
+real_img_path = r'E:\justrypython\ks_idcard_ocr\testimg/card_bat/'
 
 paths = []
 for dirpath, dirnames, filenames in os.walk(real_img_path):
@@ -94,7 +94,7 @@ def plot(path):
     classes = ['background', 'card'] # Just so we can print class names onto the image instead of IDs
 
     # Draw the predicted boxes in blue
-    for box in y_pred_decoded[i]:
+    for box in y_pred_decoded[0]:
         label = '{}: {:.2f}'.format(classes[int(box[0])], box[1])
         current_axis.add_patch(plt.Rectangle((box[2], box[4]), box[3]-box[2], box[5]-box[4], color='blue', fill=False, linewidth=2))  
         current_axis.text(box[2], box[4], label, size='x-large', color='white', bbox={'facecolor':'blue', 'alpha':1.0})
